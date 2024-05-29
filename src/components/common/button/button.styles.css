@@ -1,0 +1,11 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  transform: scale(1, 1);
+  transition: all 0.5s ease-in-out;
+}
+
+/* .btn:hover {
+    transform: scale(1.1, 1.1);
+  } */
