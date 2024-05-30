@@ -9,7 +9,6 @@ export const useDashboardContext = () => useContext(DashboardContext);
 const Dashboard = () => {
   const [theme, setTheme] = useState("dark");
   const changeTheme = (value) => {
-    console.log(theme);
     setTheme(value);
   };
   return (

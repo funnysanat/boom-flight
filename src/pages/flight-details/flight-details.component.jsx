@@ -5,6 +5,7 @@ import Card from "../../components/common/card/card.component";
 import PageHeader from "../../components/pageHeader/page-header.component";
 import Grid from "../../components/common/grid/grid.component";
 import Table from "../../components/common/table/table.component";
+import "./flight-details.styles.css";
 
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { constants } from "../../utils/constants";
@@ -34,12 +35,10 @@ const FlightDetails = () => {
       setLoading(true);
       const response = await axios(url);
       if (response.data.length !== 0 && response.data) {
-        console.log(response.data);
         setFlightDetailsData(response.data);
         setLoading(false);
       }
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   };
@@ -50,26 +49,24 @@ const FlightDetails = () => {
 
   return (
     flightDetailsData.length !== 0 && (
-      <div className="flex flex-col justify-center align-center gap-4">
+      <div className="flight-details flex flex-col justify-center align-center gap-4">
         <PageHeader
           content={`${constants.FLIGHT_DETAILS.toUpperCase()} - ${
             flightDetailsData["flightNumber"]
           }`}
           color="black"
         />
-        <div>
-          <Card
-            content={
-              <Table
-                theme={theme}
-                columns={flightColumns}
-                dataSource={[flightDetailsData]}
-                footer="true"
-                footerText={footerText}
-              />
-            }
-          />
-        </div>
+        <Card
+          content={
+            <Table
+              theme={theme}
+              columns={flightColumns}
+              dataSource={[flightDetailsData]}
+              footer="true"
+              footerText={footerText}
+            />
+          }
+        />
         {/* <Button
           theme={theme}
           title="back"

@@ -19,10 +19,13 @@ const Table = ({
   return (
     <>
       <table
-        className={classNames("table border-shadow-thin-light transition", {
-          "bg-primary text-white": theme === "dark",
-          "bg-tertiary text-black": theme === "light",
-        })}
+        className={classNames(
+          "table w-100 border-shadow-thin-light transition",
+          {
+            "bg-primary text-white": theme === "dark",
+            "bg-tertiary text-black": theme === "light",
+          }
+        )}
       >
         <thead>
           <tr className="">
